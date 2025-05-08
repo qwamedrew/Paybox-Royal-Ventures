@@ -1,6 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
 import "./App.css";
-import RootLayout from "./layout/RootLayout";
 import Hero from "./pages/user/Hero";
 import About from "./pages/user/About";
 import FormExample from "./components/FormExample";
@@ -15,13 +14,14 @@ import ContactFormFD from "./components/ContactFormFD";
 import ProductInquiryFormFD from "./components/ProductInquiryFormFD";
 import QuoteRequestFormFD from "./components/QuoteRequestFormFD"
 import FeedbackErrorFD from "./components/FeedbackErrorFD"
+import RootLayout from "./layout/RootLayout";
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Routes>
           {/* route for Routelayout */}
-          <Route path="/" element={<RootLayout />}>
+          <Route path="/" element={<RootLayout />} >
             <Route index element={<Hero />} />
             <Route path="productcg" element={<ProductCG />} />
             <Route path="about" element={<About />} />
