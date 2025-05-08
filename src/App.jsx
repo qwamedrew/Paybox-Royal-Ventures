@@ -14,7 +14,9 @@ import ContactFormFD from "./components/ContactFormFD";
 import ProductInquiryFormFD from "./components/ProductInquiryFormFD";
 import QuoteRequestFormFD from "./components/QuoteRequestFormFD"
 import FeedbackErrorFD from "./components/FeedbackErrorFD"
-import RootLayout from "./layout/RootLayout";
+import Rootlayout from "./layout/Rootlayout";
+
+
 
 
 function App() {
@@ -23,7 +25,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* route for Routelayout */}
-          <Route path="/" element={<RootLayout />}>
+          <Route path="/" element={<Rootlayout />} >
             <Route index element={<Hero />} />
             <Route path="productcg" element={<ProductCG />} />
             <Route path="about" element={<About />} />

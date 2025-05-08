@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 import Navigationbar from '../components/Navigationbar'
 
 
-const RootLayout = () => {
+const Rootlayout = () => {
   return (
     <div>
       <Navigationbar />
@@ -14,4 +14,4 @@ const RootLayout = () => {
   )
 }
 
-export default RootLayout
+export default Rootlayout
