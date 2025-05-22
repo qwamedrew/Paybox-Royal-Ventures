@@ -153,7 +153,7 @@ const FeedbackErrorFD = () => {
         setFormStatus(null);
       };
   return (
-    <div className="max-w-3xl mx-auto p-6 mt-15 bg-white rounded-lg shadow-md">
+    <div className="max-w-3xl mx-auto p-6 py-12 mt-15 bg-white rounded-lg shadow-md">
     <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Food Export/Import Application</h1>
     
     {/* Form Status Notifications */}

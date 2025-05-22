@@ -18,8 +18,9 @@ export default function HeroSection() {
         <img
           src={port}
           alt="Food import/export background"
-          className="w-full h-full object-cover opacity-70"
+          className="w-full h-full object-cover"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent"></div>
       </div>
 
       {/* Main Hero Content */}
@@ -35,7 +36,7 @@ export default function HeroSection() {
               To Your Doorstep
             </h1>
 
-            <p className="text-lg mb-8 text-gray-700 max-w-lg">
+            <p className="text-lg mb-8 text-gray-400 max-w-lg">
               As a premier food import and export company, we connect producers
               with markets across continents, ensuring quality, reliability, and
               authentic flavors.
@@ -43,14 +44,13 @@ export default function HeroSection() {
 
             <div className="flex items-center gap-4">
               <Link
-              to="loginsignup" 
+                to="loginsignup"
                 className="flex items-center px-8 py-4 rounded-lg font-medium text-white transition-transform duration-300 hover:translate-y-1"
                 style={{ backgroundColor: colors.yellow }}
               >
                 Get Started
                 <ArrowRight className="ml-2" size={18} />
               </Link>
-
             </div>
           </div>
 
@@ -93,7 +93,7 @@ export default function HeroSection() {
                     Europe
                   </span>
                   <span className="px-3 py-1 text-xs rounded-full bg-white bg-opacity-20 text-black">
-                    North America
+                    South America
                   </span>
                   <span className="px-3 py-1 text-xs rounded-full bg-white bg-opacity-20 text-black">
                     Asia

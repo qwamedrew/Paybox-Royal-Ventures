@@ -14,7 +14,7 @@ const colors = {
 const About = () => {
   return (
     <div
-      className="py-20 px-4 md:px-8"
+      className="py-15 mt-15 px-4 md:px-8"
       style={{ backgroundColor: colors.light }}
     >
       <div className="container mx-auto">

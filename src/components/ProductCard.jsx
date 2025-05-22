@@ -109,7 +109,7 @@ const ProductCard = ({
                     onClick={() => onInquire(id)}
                     disabled={!inStock}
                 >
-                    Inquire Now
+                    View More Details
                 </Button>
             </div>
         </div>

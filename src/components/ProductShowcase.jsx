@@ -223,7 +223,7 @@ const sampleProducts = [
     certifications: ["Organic", "Non-GMO", "GAP "],
     specifications: {
       Variety:
-        "Bird’s Eye Chili / Cayenne / Scotch Bonnet (available upon request)",
+        "Bird's Eye Chili / Cayenne / Scotch Bonnet (available upon request)",
       Appearance: "Whole dried pods, bright red to deep burgundy in color",
       Texture: "Crisp and dry with minimal wrinkling",
       "Moisture Content": "< 12%",
@@ -288,6 +288,16 @@ const ProductShowcase = () => {
     setSelectedProduct(productId);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  
+  // Add this function to handle navigation to login/signup page
+  const handleNavigateToLogin = () => {
+    // You can replace this with your actual navigation logic
+    // For example, if using React Router:
+    // navigate('/login');
+    
+    // For now, we'll just use a simple redirect
+    window.location.href = '/loginsignup'; // Change this to your actual login page URL
+  };
 
   if (selectedProduct) {
     const product = sampleProducts.find((p) => p.id === selectedProduct);
@@ -296,6 +306,7 @@ const ProductShowcase = () => {
         product={product}
         onInquire={handleInquire}
         onBack={() => setSelectedProduct(null)}
+        navigateToLogin={handleNavigateToLogin} // Add this line
       />
     );
   }

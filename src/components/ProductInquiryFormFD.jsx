@@ -217,10 +217,10 @@ const ProductInquiryFormFD = () => {
     setIsSubmitted(false);
   };
   return (
-    <div className="max-w-4xl mx-auto bg-white p-8  mt-15 rounded-lg shadow-md">
+    <div className="max-w-4xl mx-auto bg-white p-8 py-12  mt-15 rounded-lg shadow-md">
       <div className="mb-8 border-b border-gray-200 pb-4">
-        <h1 className="text-2xl font-bold text-center text-gray-800">Product Inquiry Form</h1>
-        <p className="text-center text-gray-600 mt-2">Complete this form to inquire about our food import/export products and services</p>
+        <h1 className="text-2xl font-bold text-center text-gray-800">Product Enquiry Form</h1>
+        <p className="text-center text-gray-600 mt-2">Complete this form to enquire about our food import/export products and services</p>
       </div>
       
       {isSubmitted ? (

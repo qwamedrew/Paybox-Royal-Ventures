@@ -84,7 +84,7 @@ const ContactFormFD = () => {
     setIsSubmitted(false);
   };
   return (
-    <div className="max-w-md mx-auto bg-white p-6 mt-15 rounded-lg shadow-md">
+    <div className="max-w-md mx-auto bg-white p-6 mt-15 py-12 rounded-lg shadow-md">
       <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">Contact Us</h1>
       
       {isSubmitted ? (
@@ -201,7 +201,7 @@ const ContactFormFD = () => {
           {/* Submit Button */}
           <button
             onClick={handleSubmit}
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition duration-200"
+            className="w-full bg-green-400 hover:bg-green-700 text-white font-medium py-2 px-4 rounded transition duration-200"
           >
             Send Message
           </button>

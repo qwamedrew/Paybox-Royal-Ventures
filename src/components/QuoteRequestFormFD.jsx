@@ -129,7 +129,7 @@ const QuoteRequestFormFD = () => {
     setIsSubmitted(false);
   };
   return (
-    <div className="max-w-2xl mx-auto bg-white p-8  mt-15 rounded-lg shadow-md">
+    <div className="max-w-2xl mx-auto bg-white p-8 py-12 mt-15 rounded-lg shadow-md">
     <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">Request a Quote</h1>
     
     {isSubmitted ? (

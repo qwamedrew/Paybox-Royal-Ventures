@@ -1,28 +1,17 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { ShoppingCart, X, Plus, Minus, ArrowRight } from "lucide-react";
+import { useCart } from "../../context/CartContext";
 
 const CartPreview = () => {
-  // Sample cart data - replace with your actual data source
-  const cartItems = [
-    {
-      id: 1,
-      name: "Wireless Earbuds",
-      price: "$49.99",
-      quantity: 1,
-      image: "/api/placeholder/80/80"
-    },
-    {
-      id: 2,
-      name: "Smart Watch",
-      price: "$129.99",
-      quantity: 1,
-      image: "/api/placeholder/80/80"
-    }
-  ];
+  const { cartItems, removeFromCart, updateQuantity } = useCart();
 
-  const subtotal = "$179.98";
-  const shipping = "Free";
-  const total = "$179.98";
+  const subtotal = useMemo(
+    () => cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0),
+    [cartItems]
+  );
+
+  const shipping = subtotal > 0 ? 0 : 0;
+  const total = subtotal + shipping;
 
   return (
     <div className="bg-white rounded-lg shadow">
@@ -47,17 +36,30 @@ const CartPreview = () => {
                   />
                 </div>
                 <div className="ml-4 flex-1">
-                  <h3 className="text-sm font-medium text-gray-900">{item.name}</h3>
-                  <p className="mt-1 text-sm text-gray-500">{item.price}</p>
+                  <h3 className="text-sm font-medium text-gray-900">
+                    {item.name}
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-500">
+                    ${item.price.toFixed(2)}
+                  </p>
                   <div className="mt-2 flex items-center">
-                    <button className="p-1 text-gray-400 hover:text-gray-500">
+                    <button
+                      className="p-1 text-gray-400 hover:text-gray-500"
+                      onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                    >
                       <Minus className="h-4 w-4" />
                     </button>
                     <span className="mx-2 text-gray-600">{item.quantity}</span>
-                    <button className="p-1 text-gray-400 hover:text-gray-500">
+                    <button
+                      className="p-1 text-gray-400 hover:text-gray-500"
+                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                    >
                       <Plus className="h-4 w-4" />
                     </button>
-                    <button className="ml-4 p-1 text-red-400 hover:text-red-500">
+                    <button
+                      className="ml-4 p-1 text-red-400 hover:text-red-500"
+                      onClick={() => removeFromCart(item.id)}
+                    >
                       <X className="h-4 w-4" />
                     </button>
                   </div>
@@ -69,15 +71,17 @@ const CartPreview = () => {
           <div className="p-6 bg-gray-50 space-y-4">
             <div className="flex justify-between text-sm">
               <p className="text-gray-500">Subtotal</p>
-              <p className="font-medium text-gray-900">{subtotal}</p>
+              <p className="font-medium text-gray-900">${subtotal.toFixed(2)}</p>
             </div>
             <div className="flex justify-between text-sm">
               <p className="text-gray-500">Shipping</p>
-              <p className="font-medium text-gray-900">{shipping}</p>
+              <p className="font-medium text-gray-900">
+                {shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}
+              </p>
             </div>
             <div className="flex justify-between text-base font-medium">
               <p className="text-gray-900">Total</p>
-              <p className="text-gray-900">{total}</p>
+              <p className="text-gray-900">${total.toFixed(2)}</p>
             </div>
             <div className="mt-6">
               <button className="w-full flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-md">
